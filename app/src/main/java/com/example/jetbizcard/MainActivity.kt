@@ -30,9 +30,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -80,7 +78,7 @@ fun CreateBizCard() {
                 CreateImageProfile()
 
                 Divider()
-                createPersonalInfoDisplay()
+                CreatePersonalInfoDisplay()
                 Button(
                     modifier = Modifier.padding(5.dp),
                     shape = RoundedCornerShape(3.dp),
@@ -101,28 +99,7 @@ fun onClick() {
 }
 
 @Composable
-private fun createPersonalInfoDisplay() {
-    Column(modifier = Modifier.padding(5.dp)) {
-        Text(
-            "J.Total",
-            style = MaterialTheme.typography.headlineLarge,
-            color = MaterialTheme.colorScheme.primary
-        )
-        Text(
-            "Android Compose programmer",
-            modifier = Modifier.padding(3.dp)
-        )
-        Text(
-            "juanillototal@acme.com",
-            modifier = Modifier.padding(3.dp),
-            style = MaterialTheme.typography.titleMedium,
-            color = MaterialTheme.colorScheme.primary
-        )
-    }
-}
-
-@Composable
-private fun createPersonalInfoDisplay() {
+private fun CreatePersonalInfoDisplay() {
     Column(modifier = Modifier.padding(5.dp)) {
         Text(
             "J.Total",
