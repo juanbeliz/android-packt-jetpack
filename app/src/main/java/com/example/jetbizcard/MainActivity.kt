@@ -2,6 +2,7 @@ package com.example.jetbizcard
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
@@ -17,6 +18,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Divider
@@ -27,6 +30,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
@@ -74,14 +78,25 @@ fun CreateBizCard() {
                 horizontalAlignment = Alignment.CenterHorizontally) {
 
                 CreateImageProfile()
-
                 Divider()
-
                 createPersonalInfoDisplay()
-
+                Button(
+                    modifier = Modifier.padding(5.dp),
+                    shape = RoundedCornerShape(3.dp),
+                    colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.primary),
+                    elevation = ButtonDefaults.buttonElevation(defaultElevation = 4.dp),
+                    onClick = { onClick() }) {
+                    Text("Portfolio",
+                        style = MaterialTheme.typography.bodyLarge
+                        )
+                }
             }
         }
     }
+}
+
+fun onClick() {
+    Log.d("Clicked", "My app: button clicked")
 }
 
 @Composable
