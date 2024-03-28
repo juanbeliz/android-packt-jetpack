@@ -78,6 +78,7 @@ fun CreateBizCard() {
                 horizontalAlignment = Alignment.CenterHorizontally) {
 
                 CreateImageProfile()
+
                 Divider()
                 createPersonalInfoDisplay()
                 Button(
@@ -97,6 +98,27 @@ fun CreateBizCard() {
 
 fun onClick() {
     Log.d("Clicked", "My app: button clicked")
+}
+
+@Composable
+private fun createPersonalInfoDisplay() {
+    Column(modifier = Modifier.padding(5.dp)) {
+        Text(
+            "J.Total",
+            style = MaterialTheme.typography.headlineLarge,
+            color = MaterialTheme.colorScheme.primary
+        )
+        Text(
+            "Android Compose programmer",
+            modifier = Modifier.padding(3.dp)
+        )
+        Text(
+            "juanillototal@acme.com",
+            modifier = Modifier.padding(3.dp),
+            style = MaterialTheme.typography.titleMedium,
+            color = MaterialTheme.colorScheme.primary
+        )
+    }
 }
 
 @Composable
